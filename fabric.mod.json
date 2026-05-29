@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "edgejump",
+  "version": "1.0.0-mc1.21.11",
+  "name": "EdgeJump",
+  "description": "Automatically jumps from the very edge of blocks to help with parkour. / Автоматически совершает прыжок с самого края блоков для облегчения паркура.",
+  "authors": [
+    "Fix85"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/edgejump",
+    "sources": "https://github.com/Fix85/EdgeJump",
+    "issues": "https://github.com/Fix85/EdgeJump/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/edgejump/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.fix85.edgejump.EdgeJump"
+    ],
+    "modmenu": [
+      "dev.fix85.edgejump.EdgeJumpModMenu"
+    ]
+  },
+  "mixins": [
+    {
+      "config": "edgejump.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": "\u003e\u003d0.19.2",
+    "minecraft": "1.21.11",
+    "java": "\u003e\u003d21",
+    "fabric-api": "*"
+  },
+  "jars": [
+    {
+      "file": "META-INF/jars/cloth-config-fabric-17.0.144-fabric.jar"
+    }
+  ]
+}
