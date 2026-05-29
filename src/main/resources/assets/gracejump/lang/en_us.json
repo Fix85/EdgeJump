@@ -1,8 +1,11 @@
 {
-  "title.gracejump.config": "GraceJump Configuration",
+  "title.gracejump.config": "EdgeJump Configuration",
   "category.gracejump.general": "General Options",
-  "option.gracejump.enabled": "Enable GraceJump",
-  "option.gracejump.enabled.tooltip": "Toggle whether Coyote Time jump forgiveness is active.",
-  "option.gracejump.ticks": "Grace Ticks Window",
-  "option.gracejump.ticks.tooltip": "The number of ticks (1/20 sec) after leaving a block edge during which you can still jump."
+  "option.gracejump.enabled": "Enable EdgeJump",
+  "option.gracejump.enabled.tooltip": "Toggle whether automatic jumping from block edges is active.",
+  "option.gracejump.ticks": "Edge Detection Window",
+  "option.gracejump.ticks.tooltip": "Adjusts the sensitivity of the edge detection (default 5).",
+  "key.gracejump.toggle": "Toggle EdgeJump",
+  "message.gracejump.enabled": "§b[EdgeJump]§r Auto Jump: §aENABLED",
+  "message.gracejump.disabled": "§b[EdgeJump]§r Auto Jump: §cDISABLED"
 }

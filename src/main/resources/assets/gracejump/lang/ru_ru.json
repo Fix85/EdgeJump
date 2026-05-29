@@ -1,8 +1,11 @@
 {
-  "title.gracejump.config": "Настройки GraceJump",
+  "title.gracejump.config": "Настройки EdgeJump",
   "category.gracejump.general": "Общие настройки",
-  "option.gracejump.enabled": "Включить GraceJump",
-  "option.gracejump.enabled.tooltip": "Определяет, активен ли прыжок Койот-тайма после схода с края блока.",
-  "option.gracejump.ticks": "Окно прощения (тики)",
-  "option.gracejump.ticks.tooltip": "Количество тиков (1/20 сек) после схода с края блока, в течение которых вы всё еще можете совершить прыжок."
+  "option.gracejump.enabled": "Включить EdgeJump",
+  "option.gracejump.enabled.tooltip": "Определяет, активен ли автоматический прыжок с края блоков.",
+  "option.gracejump.ticks": "Чувствительность обнаружения края",
+  "option.gracejump.ticks.tooltip": "Настройка чувствительности обнаружения края блока (по умолчанию 5).",
+  "key.gracejump.toggle": "Вкл/Выкл EdgeJump",
+  "message.gracejump.enabled": "§b[EdgeJump]§r Авто-прыжок: §aВКЛЮЧЕН",
+  "message.gracejump.disabled": "§b[EdgeJump]§r Авто-прыжок: §cВЫКЛЮЧЕН"
 }

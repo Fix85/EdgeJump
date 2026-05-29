@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "gracejump",
   "version": "${version}",
-  "name": "GraceJump",
-  "description": "Adds Coyote Time / jump forgiveness after leaving a block edge to make platforming feel smoother. / Добавляет Койот-тайм / прощение прыжка после схода с края блока.",
+  "name": "EdgeJump",
+  "description": "Automatically jumps from the very edge of blocks to help with parkour. / Автоматически совершает прыжок с самого края блоков для облегчения паркура.",
   "authors": [
     "Fix85"
   ],
