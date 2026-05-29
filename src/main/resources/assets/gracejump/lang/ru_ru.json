@@ -1,0 +1,8 @@
+{
+  "title.gracejump.config": "Настройки GraceJump",
+  "category.gracejump.general": "Общие настройки",
+  "option.gracejump.enabled": "Включить GraceJump",
+  "option.gracejump.enabled.tooltip": "Определяет, активен ли прыжок Койот-тайма после схода с края блока.",
+  "option.gracejump.ticks": "Окно прощения (тики)",
+  "option.gracejump.ticks.tooltip": "Количество тиков (1/20 сек) после схода с края блока, в течение которых вы всё еще можете совершить прыжок."
+}

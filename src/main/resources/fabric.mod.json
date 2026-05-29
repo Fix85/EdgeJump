@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "gracejump",
+  "version": "${version}",
+  "name": "GraceJump",
+  "description": "Adds Coyote Time / jump forgiveness after leaving a block edge to make platforming feel smoother. / Добавляет Койот-тайм / прощение прыжка после схода с края блока.",
+  "authors": [
+    "Fix85"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/gracejump",
+    "sources": "https://github.com/Fix85/GraceJump",
+    "issues": "https://github.com/Fix85/GraceJump/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/gracejump/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.fix85.gracejump.GraceJump"
+    ],
+    "modmenu": [
+      "dev.fix85.gracejump.GraceJumpModMenu"
+    ]
+  },
+  "mixins": [
+    {
+      "config": "gracejump.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.2",
+    "minecraft": ">=1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
