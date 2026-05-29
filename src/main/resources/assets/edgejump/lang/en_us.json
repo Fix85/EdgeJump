@@ -1,6 +1,6 @@
 {
   "title.edgejump.config": "EdgeJump Settings",
-  "category.edgejump.general": "EdgeJump",
+  "key.category.edgejump.general": "EdgeJump",
   "option.edgejump.enabled": "Auto-Jump from Edge",
   "option.edgejump.enabled.tooltip": "If enabled, you will automatically jump when reaching the very edge of a block.",
   "option.edgejump.ticks": "Edge Detection Sensitivity",

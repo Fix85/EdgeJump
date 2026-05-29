@@ -1,6 +1,6 @@
 {
   "title.edgejump.config": "Настройки EdgeJump",
-  "category.edgejump.general": "EdgeJump",
+  "key.category.edgejump.general": "EdgeJump",
   "option.edgejump.enabled": "Авто-прыжок с края",
   "option.edgejump.enabled.tooltip": "Если включено, персонаж будет автоматически прыгать при достижении самого края блока.",
   "option.edgejump.ticks": "Чувствительность обнаружения края",
