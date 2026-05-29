@@ -2,17 +2,14 @@ package dev.fix85.gracejump.mixin;
 
 import dev.fix85.gracejump.Config;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ClientPlayerEntity.class)
 public abstract class LocalPlayerMixin {
-    @Shadow
-    public abstract void jump();
-
     private int gracejump$coyoteTicks = 0;
 
     @Inject(method = "tickMovement", at = @At("HEAD"))
@@ -24,7 +21,11 @@ public abstract class LocalPlayerMixin {
         }
 
         if (player.isOnGround()) {
-            gracejump$coyoteTicks = config.graceTicks;
+            if (player.input.playerInput.jump()) {
+                gracejump$coyoteTicks = 0;
+            } else {
+                gracejump$coyoteTicks = config.graceTicks;
+            }
         } else {
             if (gracejump$coyoteTicks > 0) {
                 if (player.input.playerInput.jump() 
@@ -34,17 +35,12 @@ public abstract class LocalPlayerMixin {
                         && !player.isTouchingWater() 
                         && !player.isInLava() 
                         && !player.isClimbing()) {
-                    jump();
+                    ((LivingEntity) player).jump();
                     gracejump$coyoteTicks = 0;
                 } else {
                     gracejump$coyoteTicks--;
                 }
             }
         }
-    }
-
-    @Inject(method = "jump", at = @At("HEAD"))
-    private void gracejump$onJump(CallbackInfo ci) {
-        gracejump$coyoteTicks = 0;
     }
 }
