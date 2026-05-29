@@ -1,4 +1,4 @@
-package dev.fix85.gracejump;
+package dev.fix85.edgejump;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -9,16 +9,16 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
-public class GraceJump implements ClientModInitializer {
+public class EdgeJump implements ClientModInitializer {
     private static KeyBinding toggleKey;
-    private static final KeyBinding.Category CATEGORY = KeyBinding.Category.create(Identifier.of("gracejump", "general"));
+    private static final KeyBinding.Category CATEGORY = KeyBinding.Category.create(Identifier.of("edgejump", "general"));
 
     @Override
     public void onInitializeClient() {
         Config.load();
 
         toggleKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.gracejump.toggle",
+                "key.edgejump.toggle",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_G,
                 CATEGORY
@@ -32,9 +32,9 @@ public class GraceJump implements ClientModInitializer {
                 
                 if (client.player != null) {
                     if (config.enabled) {
-                        client.player.sendMessage(Text.translatable("message.gracejump.enabled"), true);
+                        client.player.sendMessage(Text.translatable("message.edgejump.enabled"), true);
                     } else {
-                        client.player.sendMessage(Text.translatable("message.gracejump.disabled"), true);
+                        client.player.sendMessage(Text.translatable("message.edgejump.disabled"), true);
                     }
                 }
             }

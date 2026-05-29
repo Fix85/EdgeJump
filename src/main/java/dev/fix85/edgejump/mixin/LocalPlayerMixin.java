@@ -1,6 +1,6 @@
-package dev.fix85.gracejump.mixin;
+package dev.fix85.edgejump.mixin;
 
-import dev.fix85.gracejump.Config;
+import dev.fix85.edgejump.Config;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPlayerEntity.class)
 public abstract class LocalPlayerMixin {
     @Unique
-    private boolean gracejump$isAboutToFall(ClientPlayerEntity player) {
+    private boolean edgejump$isAboutToFall(ClientPlayerEntity player) {
         double vx = player.getVelocity().x;
         double vz = player.getVelocity().z;
         if (vx == 0 && vz == 0) {
@@ -24,7 +24,7 @@ public abstract class LocalPlayerMixin {
     }
 
     @Inject(method = "tickMovement", at = @At("HEAD"))
-    private void gracejump$handleAutoEdgeJump(CallbackInfo ci) {
+    private void edgejump$handleAutoEdgeJump(CallbackInfo ci) {
         ClientPlayerEntity player = (ClientPlayerEntity) (Object) this;
         Config config = Config.get();
         if (!config.enabled) {
@@ -39,7 +39,7 @@ public abstract class LocalPlayerMixin {
                     && !player.isTouchingWater() 
                     && !player.isInLava() 
                     && !player.isClimbing()) {
-                if (gracejump$isAboutToFall(player)) {
+                if (edgejump$isAboutToFall(player)) {
                     ((LivingEntity) player).jump();
                 }
             }

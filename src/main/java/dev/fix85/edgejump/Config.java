@@ -1,4 +1,4 @@
-package dev.fix85.gracejump;
+package dev.fix85.edgejump;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -23,7 +23,7 @@ public class Config {
     }
 
     private static Path getFilePath() {
-        return FabricLoader.getInstance().getConfigDir().resolve("gracejump.json");
+        return FabricLoader.getInstance().getConfigDir().resolve("edgejump.json");
     }
 
     public static void load() {
