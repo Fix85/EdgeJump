@@ -2,7 +2,6 @@ package dev.fix85.edgejump.mixin;
 
 import dev.fix85.edgejump.Config;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,8 +22,7 @@ public abstract class LocalPlayerMixin {
         return player.doesNotCollide(Math.signum(vx) * checkDistance, -0.5, Math.signum(vz) * checkDistance);
     }
 
-
-    @Inject(method = "tickMovement", at = @At("HEAD"))
+    @Inject(method = "tickMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/input/Input;tick(ZZ)V", shift = At.Shift.AFTER))
     private void edgejump$handleAutoEdgeJump(CallbackInfo ci) {
         ClientPlayerEntity player = (ClientPlayerEntity) (Object) this;
         Config config = Config.get();
@@ -41,7 +39,7 @@ public abstract class LocalPlayerMixin {
                     && !player.isInLava() 
                     && !player.isClimbing()) {
                 if (edgejump$isAboutToFall(player)) {
-                    ((LivingEntity) player).jump();
+                    player.input.jump();
                 }
             }
         }
