@@ -19,9 +19,10 @@ public abstract class LocalPlayerMixin {
             return false;
         }
 
-        double checkDistance = 0.15;
+        double checkDistance = Config.get().graceTicks * 0.08;
         return player.doesNotCollide(Math.signum(vx) * checkDistance, -0.5, Math.signum(vz) * checkDistance);
     }
+
 
     @Inject(method = "tickMovement", at = @At("HEAD"))
     private void edgejump$handleAutoEdgeJump(CallbackInfo ci) {
