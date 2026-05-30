@@ -1,0 +1,1 @@
+Rewrite edge jump logic to trigger using the natural player.input.jump() method. This ensures standard network packets are sent, satisfying prediction-based anti-cheats (like GrimAC) perfectly.

@@ -22,7 +22,7 @@ public abstract class LocalPlayerMixin {
         return player.doesNotCollide(Math.signum(vx) * checkDistance, -0.5, Math.signum(vz) * checkDistance);
     }
 
-    @Inject(method = "tickMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/input/Input;tick(ZZ)V", shift = At.Shift.AFTER))
+    @Inject(method = "tickMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/input/Input;tick()V", shift = At.Shift.AFTER))
     private void edgejump$handleAutoEdgeJump(CallbackInfo ci) {
         ClientPlayerEntity player = (ClientPlayerEntity) (Object) this;
         Config config = Config.get();
